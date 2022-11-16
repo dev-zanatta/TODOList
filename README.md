@@ -3,8 +3,10 @@ TODOList using Vue, Quasar, Laravel and MySQL
 
 To run the application: <br>
 -in the main folder, run on cmd `php artisan serve`<br>
--cd into Quasar/TODOList <br>
+-cd Quasar <br>
+-cd TODOList <br>
 -run `Quasar dev`<br>
+-access your localhost:9000
 The mysqlScript is the database model that is used in this application
 <br><br>
 <h1>Main page with no tasks:</h1>
