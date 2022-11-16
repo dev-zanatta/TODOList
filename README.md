@@ -6,7 +6,7 @@ To run the application: <br>
 -cd Quasar <br>
 -cd TODOList <br>
 -run `Quasar dev`<br>
--access your localhost:9000
+-access your localhost:9000 <br>
 The mysqlScript is the database model that is used in this application
 <br><br>
 <h1>Main page with no tasks:</h1>
