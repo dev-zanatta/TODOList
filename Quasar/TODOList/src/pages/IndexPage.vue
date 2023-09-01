@@ -1,20 +1,12 @@
 <template>
   <q-page class="">
     <q-input v-model="newTask" filled bottom-slots placeholder="Add new tasks" @keyup.enter="addNewTask">
-
       <template v-slot:append>
         <q-btn @click="addNewTask(task)" round dense flat icon="add" />
       </template>
     </q-input>
     <q-list class="bg-grey-4" separator bordered>
-      <!--
-        Rendering a <label> tag (notice tag="label")
-        so QCheckboxes will respond to clicks on QItems to
-        change Toggle state.
-      -->
-
-      <q-item
-      v-for="task in tasks" :key="task.title" @click="task.finished=!task.finished" :class="{  'finished': task.finished}" v-ripple>
+      <q-item v-for="task in tasks" :key="task.title" @click="task.finished=!task.finished" :class="{ 'finished': task.finished}" v-ripple>
         <q-item-section avatar>
           <q-checkbox @click="updateTask(task)" v-model="task.finished"/>
         </q-item-section>
@@ -25,7 +17,6 @@
           <q-btn @click.stop="finishTask(task)" flat color="secondary" icon="delete" />
         </q-item-section>
       </q-item>
-
     </q-list>
   </q-page>
 </template>
@@ -97,11 +88,6 @@ export default defineComponent({
         .then(response => { return response.json() })
         .then(data => {
           this.tasks = data
-          for (let i = 0; i < this.tasks.length; i++) {
-            if (this.tasks[i].finished === 0) {
-              this.tasks[i].finished = false
-            } else this.tasks[i].finished = true
-          }
         })
     }
   }
